@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hej, Emil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one narrow reading column; a big greeting, then three short facts and a small anatomy of the file itself. */
+:root {
+  --ground: #eef2f6;
+  --surface: #ffffff;
+  --ink: #16212e;
+  --muted: #56657a;
+  --line: #d3dbe5;
+  --accent: #2f5fa7;
+  --sun: #e2b53a;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #111821;
+    --surface: #18222e;
+    --ink: #e7edf4;
+    --muted: #93a3b7;
+    --line: #2a3646;
+    --accent: #8db4ef;
+    --sun: #f0c656;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #111821;
+  --surface: #18222e;
+  --ink: #e7edf4;
+  --muted: #93a3b7;
+  --line: #2a3646;
+  --accent: #8db4ef;
+  --sun: #f0c656;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding-block: clamp(3rem, 9vw, 6rem) 4rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.hello { display: grid; gap: 1rem; }
+.hello h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(4.5rem, 18vw, 8.5rem);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.hello h1 .dot { color: var(--sun); }
+.hello p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 32ch;
+  text-wrap: balance;
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+.label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.explain { display: grid; gap: 1rem; }
+.explain p { margin: 0; max-width: 62ch; }
+
+.facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.facts li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.facts strong { font-weight: 600; }
+.facts span { color: var(--muted); }
+@media (max-width: 480px) {
+  .facts li { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+.anatomy { display: grid; gap: 0.75rem; }
+.code {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.code pre { margin: 0; }
+.code .c { color: var(--muted); }
+.code .t { color: var(--accent); }
+.caption { font-size: 0.9375rem; color: var(--muted); margin: 0; }
+
+footer { font-size: 0.875rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <section class="hello">
+    <h1>Hej<span class="dot">.</span></h1>
+    <p>Det här är en artefakt. Du tittar på en just nu.</p>
+  </section>
+
+  <section class="explain">
+    <span class="label">Vad är en artefakt?</span>
+    <h2>En webbsida som Claude bygger och publicerar åt dig</h2>
+    <p>När ett svar blir tydligare som en sida än som text i terminalen skriver Claude en HTML-fil och publicerar den på claude.ai. Resultatet är en riktig webbsida med egen länk. Den kan vara en rapport, ett diagram, ett verktyg, ett spel eller, som här, en hälsning.</p>
+  </section>
+
+  <ul class="facts">
+    <li><strong>Privat från start</strong><span>Bara du ser den tills du själv väljer att dela länken.</span></li>
+    <li><strong>Samma länk</strong><span>Ber du om ändringar uppdateras sidan på plats. Länken är densamma och öppna flikar hämtar den nya versionen.</span></li>
+    <li><strong>Ljust och mörkt</strong><span>Sidan följer ditt tema. Byt till mörkt läge så ser du den andra färgpaletten.</span></li>
+    <li><strong>Kan göra mer</strong><span>En artefakt kan spara data, låta flera personer fylla i samma lista eller ställa frågor till Claude.</span></li>
+  </ul>
+
+  <section class="anatomy">
+    <span class="label">Så ser den här sidan ut inuti</span>
+    <div class="code"><pre><span class="t">&lt;title&gt;</span>Hej, Emil<span class="t">&lt;/title&gt;</span>
+<span class="t">&lt;style&gt;</span> <span class="c">/* färger, typsnitt, layout */</span> <span class="t">&lt;/style&gt;</span>
+<span class="t">&lt;h1&gt;</span>Hej.<span class="t">&lt;/h1&gt;</span>
+<span class="t">&lt;p&gt;</span>Det här är en artefakt …<span class="t">&lt;/p&gt;</span></pre></div>
+    <p class="caption">En enda fil med HTML och CSS. Inget att installera.</p>
+  </section>
+
+  <footer>Gjord av Claude den 2 november 2026.</footer>
+</main>
+</body>
+</html>

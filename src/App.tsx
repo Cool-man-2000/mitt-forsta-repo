@@ -1,9 +1,9 @@
-import Ticker from "./components/Ticker.jsx";
-import Construction from "./components/Construction.jsx";
-import Facts from "./components/Facts.jsx";
-import CodeSample from "./components/CodeSample.jsx";
-import VisitCounter from "./components/VisitCounter.jsx";
-import Buttons from "./components/Buttons.jsx";
+import Ticker from "./components/Ticker";
+import Construction from "./components/Construction";
+import Facts from "./components/Facts";
+import CodeSample from "./components/CodeSample";
+import VisitCounter from "./components/VisitCounter";
+import Buttons from "./components/Buttons";
 
 export default function App() {
   return (
@@ -36,7 +36,7 @@ export default function App() {
 
       <h2>Så ser den här sidan ut inuti</h2>
       <CodeSample />
-      <p className="small">Byggd med React och Vite. Publiceras automatiskt via GitHub Actions.</p>
+      <p className="small">Byggd med React, TypeScript och Vite. Publiceras automatiskt via GitHub Actions.</p>
 
       <hr />
 

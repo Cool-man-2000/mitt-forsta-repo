@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const KEY = "besok";
-let counted = null;
+let counted: number | null = null;
 
 // Räknar besök i den här webbläsaren, en gång per sidladdning. Varje besökare har sin egen räknare.
-function countVisit() {
+function countVisit(): number {
   if (counted !== null) return counted;
   counted = 1;
   try {
